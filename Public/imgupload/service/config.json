@@ -1,5 +1,5 @@
 /* 前后端通信相关的配置,注释只允许使用多行方式 */
 {
     /* 上传图片配置项 */
-    "uploadFile": "Public/dddd/" /* 图片上传目录,首目录不需要配置斜杠,例如:Public/test/ */
+    "uploadFile": "Public/imgtmp/" /* 图片上传目录,首目录不需要配置斜杠,例如:Public/test/ */
 }

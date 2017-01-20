@@ -24,13 +24,16 @@
 	<script src="js/function.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function() {
+            //获取父窗体的input的值,用于在编辑时显示图片预览
             var data = $("#getReturnMsg",window.parent.document).val();
             if(data != ''){
                 console.log(data);
+                //转为json
                 dataArray = $.parseJSON(data);
                 console.log(dataArray);
                 var len = dataArray.length;
                 if(len != 0){
+                    //调用接口
                     showImg(dataArray);
                 }
 			}
@@ -38,7 +41,6 @@
         });
 
     </script>
-
     <script src="js/ajaxfileupload.js" type="text/javascript"></script>
 
 </html>

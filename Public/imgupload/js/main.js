@@ -1,7 +1,10 @@
 /**
  * Created by Administrator on 2017/1/19.
  */
-
+/**
+ *
+ * @param object file标签的对象
+ */
 function ajaxUploadFiles(object) {
     var fileid = $(object).attr('id');
     $.ajaxFileUpload({
@@ -22,6 +25,10 @@ function ajaxUploadFiles(object) {
 
     });
 }
+/**
+ * 获取绝对路径
+ * @returns {string}
+ */
 function getRootPath() {
     //获取当前网址，如： http://localhost:8080/ems/Pages/Basic/Person.jsp
     var curWwwPath = window.document.location.href;
@@ -35,6 +42,10 @@ function getRootPath() {
     return(localhostPath + projectName);
 }
 
+/**
+ * 展示图片接口
+ * @param data  data为一个Array,元素为图片地址
+ */
 function showImg(data) {
     var len = data.length;
     console.log(1);
@@ -42,7 +53,6 @@ function showImg(data) {
     var html = "";
     for(var i = 0; i < len; i++){
          html += '<li class="img_li"><img src="' + data[i] + '" id="testimgimg1 " class="testimgstyle"><img src="" alt="" class="delect_img hide"  /></li>'
-
     }
     $('.img_ul').append(html);
     deleteLi();
