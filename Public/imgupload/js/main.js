@@ -14,8 +14,9 @@ function ajaxUploadFiles(object) {
         dataType: 'json', //返回数据类型:text，xml，json，html,scritp,jsonp五种
         success: function(data) {
             if (data.status == '0') {
-                alert('上传失败');
+               alert(data.msg);
             } else if (data.status == '1') {
+                console.log(fileid);
                 var html = '<li class="img_li"><img src="' + data.msg + '" id="testimg' + fileid + '" class="testimgstyle"><img src="" alt="" class="delect_img hide"  /></li>'
                 $('.img_ul').append(html);
                 deleteLi();
