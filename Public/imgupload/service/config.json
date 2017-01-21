@@ -1,5 +1,9 @@
 /* 前后端通信相关的配置,注释只允许使用多行方式 */
 {
     /* 上传图片配置项 */
-    "uploadFile": "Public/imgtmp/" /* 图片上传目录,首目录不需要配置斜杠,例如:Public/test/ */
+    /*若需按日期建立文件夹,可这样配置  {yyyy}{mm}{dd}/{time}{rand:6}*/
+    "uploadFile": "Public/imgtmp/", /* 图片上传目录,首目录不需要配置斜杠,例如:Public/test/ */
+    "maxUploadSize": "1024000",        /* 图片大小限制.单位:B 默认1M*/
+    "isCheckImgWH" : "",        /* 是否限制图片宽高,输入一个宽高为限制,留空为不限制 */
+    "imageAllowFiles": ["png", "jpg", "jpeg", "gif", "bmp"] /* 上传图片格式显示 */
 }
