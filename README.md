@@ -95,7 +95,7 @@ www  WEB部署目录（或者子目录）
 	需要在service文件夹下的config.json里配置一些基本设置,如文件上传路径,过滤参数等
 ~~~
 	THINKPHP的童鞋注意,需要在  var returnUrl = "Public/imgupload/index.html";  这个位置,吧public替换为__PUBLIC__,才可以正确访问到!
-~~~
+
 ## 版本:0.1
 ===============
 #####  修复了图片宽高无法正确处理的bug
