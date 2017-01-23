@@ -25,18 +25,22 @@
             }
         }
         $imgWH = explode("x",$CONFIG['isCheckImgWH']);
+        $tempFile = $_FILES['file']['tmp_name'];
+        $tempImg = getimagesize($tempFile);
+        $tempW = $tempImg[0];
+        $tempH = $tempImg[1];
         //限制宽高
         if(!empty($imgWH[0]) ||  !empty($imgWH[1])){
                 if(!empty($imgWH[0]) && empty($imgWH[1])){
-                    if($imgWH[0] != imagesx($_FILES['file']['tmp_name'])){
+                    if($imgWH[0] != $tempW){
                         echo json_encode(array('status'=>'0','msg'=>'图片尺寸不符合规则!'));exit();
                     }
                 }else if(empty($imgWH[0]) && !empty($imgWH[1])){
-                    if($imgWH[1] != imagesy($_FILES['file']['tmp_name'])){
+                    if($imgWH[1] != $tempH){
                         echo json_encode(array('status'=>'0','msg'=>'图片尺寸不符合规则!'));exit();
                     }
                 }else{
-                    if($imgWH[1] != imagesy($_FILES['file']['tmp_name']) || $imgWH[0] != imagesx($_FILES['file']['tmp_name'])){
+                    if($imgWH[0] != $tempW || $imgWH[1] != $tempH){
                         echo json_encode(array('status'=>'0','msg'=>'图片尺寸不符合规则!'));exit();
                     }
                 }
